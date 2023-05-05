@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CHESS BOARD</title>
+    </head>
+<body>
+    <script>
+        function newLine(){
+            document.write("<br/>");
+        }
+        function print(data){
+            let label = document.createElement("label");
+            label.textContent=data;
+            document.body.appendChild(label);
+        }
+        
+        let board_size=8;
+        
+        function createChessBoard(){                        
+            let symbolInit='*';
+            for(let i=0;i<8;i++){
+                let symbol=symbolInit;                           
+                for(let j=0;j<8;j++){                    
+                    print(symbol);
+                    symbol = (symbol=='*') ? '#' : '*';
+                }                
+                symbolInit = (symbolInit=="#") ? '*' : '#';
+                newLine();                
+            }
+        }
+
+        createChessBoard();
+    </script>
+</body>
+</html>
